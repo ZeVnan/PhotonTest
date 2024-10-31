@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(InputField))]
 public class PlayerNameInputField : MonoBehaviour
 {
     private string playerNamePrefKey { get; } = "PlayerName";

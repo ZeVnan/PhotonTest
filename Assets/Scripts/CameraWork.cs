@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,7 +18,7 @@ public class CameraWork : MonoBehaviour
     private float smoothSpeed = 10f;
 
     private Transform cameraTransform { get; set; }
-    private bool isFollowing { get; set; } = true;
+    private bool isFollowing { get; set; }
     private Vector3 cameraOffset = Vector3.zero;
 
     void Start()

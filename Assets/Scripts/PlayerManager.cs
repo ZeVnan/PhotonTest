@@ -29,7 +29,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
     private PlayerUI playerUI { get; set; }
     private bool isLeavingRoom { get; set; }
     private int score { get; set; }
-    private void Awake()
+    public void Awake()
     {
         if (photonView.IsMine)
         {
@@ -37,7 +37,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
         }
         DontDestroyOnLoad(gameObject);
     }
-    private void Start()
+    public void Start()
     {
         this.transform.rotation = Quaternion.Euler(0, 0, -1);
         this.rigidBody = this.gameObject.GetComponent<Rigidbody>();
@@ -63,7 +63,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             Debug.LogError("Missing PlayerUI prefab");
         }
     }
-    private void Update()
+    public void Update()
     {
         if (photonView.IsMine)
         {
@@ -128,6 +128,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks, IPunObservable
             this.transform.Rotate(0,- angle, 0);
         }
     }
+    
     public void OnFoodEaten(int givenScore)
     {
         this.score += givenScore;

@@ -26,7 +26,7 @@ public class GameNetworkingManager : MonoBehaviourPunCallbacks
         }
         else
         {
-            if (PlayerManager.LocalPlayerInstance == null)
+            if (PhotonNetwork.InRoom && PlayerManager.LocalPlayerInstance == null)
             {
                 Debug.Log("Instantiate player");
                 PhotonNetwork.Instantiate(
